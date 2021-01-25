@@ -3,6 +3,8 @@ package com.orvillex.reactordemo.repository;
 import com.orvillex.reactordemo.domain.Taco;
 import com.orvillex.reactordemo.repository.mongodb.TacoRepository;
 
+import org.apache.shiro.crypto.hash.DefaultHashService;
+import org.apache.shiro.crypto.hash.HashRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -87,5 +89,18 @@ public class TacoRepositoryTest {
     public void deleteByNameCorrectly() {
         StepVerifier.create(repository.deleteByName("Mysql"))
             .expectComplete();
+    }
+
+    @Test
+    public void testPass() {
+        // String old = "4c2680f74bfb44a9603b0311415037002abecd6744647ae905efefb6563066d11ddb0c7bba08361568597bfb499759fedddffce361df0eadbc3252a99da57cb6";
+        // String newpas = "4604ebd3fd921ea5cdc2e3cb8cf00901451271fdc6e6f9fb6703492119594a10ac3442b8abb2ffa5660a775af131d8edebc02347a5d8fe32e5454943526249a2";
+        // String salt = "07t61S70u719Q600xfD0Zw06c9ki1D61";
+        // String password = "s123b456e";
+        // DefaultHashService defaultHashService = new DefaultHashService();
+        // defaultHashService.setHashAlgorithmName("SHA-512");
+        // defaultHashService.setHashIterations(1024);
+        // HashRequest request = (new HashRequest.Builder()).setSalt(salt).setSource(password).build();
+        // String newhash = defaultHashService.computeHash(request).toHex();
     }
 }

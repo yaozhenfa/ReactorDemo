@@ -22,7 +22,7 @@ public class ReactorTest {
             .expectNext("Grape")
             .expectNext("Banana")
             .expectNext("Strawberry")
-            .expectAccessibleContext();
+            .expectComplete();
     }
 
     @Test
